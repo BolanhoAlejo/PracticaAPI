@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <form class="mb-4">
+            <div class="form-group">
+                <label for="Texto">Ingrese Parametros</label>
+                <input type="text" id="Texto" name="Texto" class="form-control" [(ngModel)]="parametros">
+            </div>
+            <button type="button" id="buscar" class="btn btn-primary mt-2" (click)="ObtenerRecetas(parametros)">Buscar</button>
+        </form>
+        <div class="row">
+            <div class="col-md-3 mb-4" *ngFor="let r of recetas">
+                <div class="card h-100">
+                    <img [src]="r.thumbnail_url" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ r.slug }}</h5>
+                        <p class="card-text">{{ r.description }}</p>
+                        <p class="card-text">Ingredientes: {{ r.keywords }}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

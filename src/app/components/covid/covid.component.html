@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid por Pais</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <form class="mb-4">
+            <div class="form-group">
+                <label for="Texto">Ingresar Pais</label>
+                <input type="text" id="Texto" name="Texto" class="form-control" [(ngModel)]="pais">
+            </div>
+            <button type="button" id="buscar" class="btn btn-primary mt-2" (click)="ObtenerDatos(pais)">Buscar</button>
+        </form>
+
+        <div class="card" style="width: 100%;">
+            <div class="card-header">
+                <h3>Información</h3>
+                <h5>Pais: {{ datos.country }}</h5>
+                <h5>Poblacion Total: {{ datos.population }}</h5>
+                <h5>Total de Casos: {{ datos.cases.total }}</h5>
+                <h5>Total de Fallecidos: {{ datos.deaths.total }}</h5>
+                <h5>Total de Testeados: {{ datos.tests.total }}</h5>
+                <h5>Datos al dia de: {{ datos.day}}</h5>
+                <!DOCTYPE html>
+            </div>
+            <div class="card-body">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

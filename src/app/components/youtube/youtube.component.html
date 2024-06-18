@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducir nombre del video</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <form class="mb-4">
+            <div class="form-group">
+                <label for="Texto">Ingresar nombre:</label>
+                <input type="text" id="Texto" name="Texto" class="form-control" [(ngModel)]="text">
+            </div>
+            <button type="button" id="buscar" class="btn btn-primary mt-2" (click)="ObtenerVideos(text)">Buscar</button>
+        </form>
+    </div>
+</body>
+
+<ul class="list-group list-group-horizontal">
+    <li class="list-group-item">Titulo</li>
+    <li class="list-group-item">Duracion</li>
+    <li class="list-group-item">Descripcion</li>
+  </ul>
+  <ul class="list-group list-group-horizontal-sm" *ngFor="let v of videos">
+    <li class="list-group-item">{{ v.title }}</li>
+    <li class="list-group-item">{{ v.video_length }}</li>
+    <li class="list-group-item">{{ v.description }}</li>
+  </ul>
+
+
+  <div class="row">
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item">Titulo</li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item">Duracion</li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item">Descripcion</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row" *ngFor="let v of videos">
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item">{{ v.title }}</li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item">{{ v.video_length }}</li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item">{{ v.description }}</li>
+      </ul>
+    </div>
+  </div>
+
+</html>

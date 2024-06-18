@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla del Comprobante</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <button type="button" class="btn btn-primary" (click)="ObtenerRecetas()">Obtener Recetas</button>
+        </div>
+    </div>
+    <ul class="list-group list-group-horizontal">
+        <li class="list-group-item">Path</li>
+        <li class="list-group-item">Titulo</li>
+        <li class="list-group-item">Imagen</li>
+        <li class="list-group-item"></li>
+      </ul>
+      <ul class="list-group list-group-horizontal-sm" *ngFor="let r of recetas">
+        <li class="list-group-item">{{ r.path }}</li>
+        <li class="list-group-item">{{ r.title }}</li>
+        <img [src]="r.image" class="card-img-top" alt="...">
+        <button type="button" class="list-group-item list-group-item-action list-group-item-secondary text-center" (click)="ObtenerPasos(r.path)" data-bs-toggle="modal" data-bs-target="#ModalReceta">Ver Ingredientes y Pasos</button>
+
+      </ul>
+
+      <div class="modal fade" id="ModalReceta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="list-group">
+                        <div class="row">
+                            <label for="Texto">Ingredientes</label>
+                            <div class="col-12 col-md-6 col-lg-6 mb-2" *ngFor="let i of ingredientes">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">{{ i }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias del Día</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <button type="button" class="btn btn-primary" (click)="ObtenerNoticias()">Obtener Noticias</button>
+        </div>
+        <h3 class="text-center mb-4">Noticias del Día</h3>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 mb-4" *ngFor="let n of noticias">
+                <div class="card h-100">
+                    <img [src]="n.mainMedia[0].original.url" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ n.title }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ n.categoryLabel }}</h6>
+                        <p class="card-text">{{ n.mainMedia[0].original.alt }}</p>
+                        <a class="btn btn-primary w-100 " href="https://livescore.com{{ n.url }}">Ver Mas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

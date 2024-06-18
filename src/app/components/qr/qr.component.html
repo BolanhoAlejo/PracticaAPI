@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Codigos QR</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <form>
+            <div class="form-group">
+                <label for="Contenido">Contenido:</label>
+                <input type="text" id="Contenido" name="contenido" class="form-control" [(ngModel)]="contenido">
+            </div>
+            <div class="form-group">
+                <label for="Width">Ancho:</label>
+                <input type="text" id="Width" name="width" class="form-control" [(ngModel)]="wdata">
+            </div>
+            <div class="form-group">
+                <label for="Height">Alto:</label>
+                <input type="text" id="Height" name="height" class="form-control" [(ngModel)]="hdata">
+            </div>
+            <div class="form-group">
+                <label for="Fg-color">Color de Frente:</label>
+                <input type="text" id="Fg-color" name="fg-color" class="form-control" [(ngModel)]="fgcolor">
+            </div>
+            <div class="form-group">
+                <label for="Bg-color">Color de Fondo:</label>
+                <input type="text" id="Bg-color" name="bg-color" class="form-control" [(ngModel)]="bgcolor">
+            </div>
+            <div class="text-center">
+                <button type="button" id="Generar" class="btn btn-success" (click)="ObtenerCodigoQr()">Generar Codigo QR</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

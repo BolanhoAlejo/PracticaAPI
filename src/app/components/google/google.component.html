@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar en google</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <form class="mb-4">
+            <div class="form-group">
+                <label for="Texto">Ingrese busqueda:</label>
+                <input type="text" id="Texto" name="Texto" class="form-control" [(ngModel)]="busqueda">
+            </div>
+            <button type="button" id="buscar" class="btn btn-primary mt-2" (click)="ObtenerResultados(busqueda)">Buscar</button>
+        </form>
+
+        <div class="card" style="width: 18rem;" *ngFor="let r of resultado">
+            <div class="card-body">
+              <h5 class="card-title">{{ r.title }}</h5>
+              <p class="card-text">{{ r.description }}</p>
+              <a [href]="r.url" class="btn btn-primary">Ir</a>
+            </div>
+          </div>
+        </div>
+</body>
+</html>

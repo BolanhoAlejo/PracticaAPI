@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de IP</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <form class="mb-4">
+            <div class="form-group">
+                <label for="Texto">Ingresar dirección IP</label>
+                <input type="text" id="Texto" name="Texto" class="form-control" [(ngModel)]="texto">
+            </div>
+            <button type="button" id="buscar" class="btn btn-primary mt-2" (click)="buscarIp()">Buscar</button>
+        </form>
+
+        <div class="card" style="width: 100%;">
+            <div class="card-header">
+                <h3>Información de la IP</h3>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">País: {{ direccion.country }}</h5>
+                <h5 class="card-title">Ciudad: {{ direccion.city }}</h5>
+                <h5 class="card-title">Información de la ubicación de la IP</h5>
+                <h5 class="card-title">Fecha del Lugar: {{ pais.date }}</h5>
+                <h5 class="card-title">Hora del Lugar: {{ pais.time }}</h5>
+                <h5 class="card-title">Zona Horaria: {{ pais.name }}</h5>
+                <h5 class="card-title">Ir al Lugar</h5>
+                <a class="btn btn-primary w-100" href="https://maps.google.com/?q={{ direccion.latitude }},{{ direccion.longitude }}" target="_blank">Ir</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

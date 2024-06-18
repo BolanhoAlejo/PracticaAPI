@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacion de la Cancion</title>
+</head>
+<body>
+    <div class="container mt-5" >
+        <form class="mb-4">
+            <div class="form-group">
+                <label for="Texto">Ingresar titulo</label>
+                <input type="text" id="Texto" name="Texto" class="form-control" [(ngModel)]="musica">
+            </div>
+            <button type="button" id="buscar" class="btn btn-primary mt-2" (click)="ObtenerMusica( musica )">Buscar</button>
+        </form>
+
+        <div class="card" style="width: 50%;">
+            <div class="card-header">
+                <h3>Información</h3>
+                <h5>Titulo: {{ cancion.text }}</h5>
+                <img [src]="cancion.image" class="card-img-top" alt="...">
+            </div>
+            <div class="card-body">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
